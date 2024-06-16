@@ -1,0 +1,445 @@
+2024-06-02 10:04:53,127 - DB_Conn_Error - ERROR - A database connection error occurred
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 327, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Access denied for user 'diegonunez4'@'localhost' (using password: YES)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 38, in make_db_conn
+    db_conn = mysql.connector.connect(host=self.host,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\pooling.py", line 309, in connect
+    return _get_pooled_connection(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\pooling.py", line 93, in _get_pooled_connection
+    _CONNECTION_POOLS[pool_name] = MySQLConnectionPool(**kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\pooling.py", line 490, in __init__
+    self.add_connection()
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\pooling.py", line 613, in add_connection
+    cnx = connect(**self._cnx_config)  # type: ignore[assignment]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 144, in __init__
+    self.connect(**kwargs)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\abstracts.py", line 1360, in connect
+    self._open_connection()
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 332, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1045 (28000): Access denied for user 'diegonunez4'@'localhost' (using password: YES)
+2024-06-16 13:01:33,192 - MySQL Queries - ERROR - Either the table name 'market_symbols' or the DB name 'finan_invest' are incorrect
+
+.
+2024-06-16 13:10:49,935 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.086343
+
+2024-06-16 13:15:01,627 - DB_Conn_Error - ERROR - A database connection error occurred
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Commands out of sync; you can't run this command now
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 69, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\market_symbols_crud.py", line 44, in insert_to_table
+    cursor.executemany(query, market_syms)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 509, in executemany
+    self.execute(operation, params)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2014 (HY000): Commands out of sync; you can't run this command now
+2024-06-16 13:20:12,696 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.085389
+
+2024-06-16 13:20:13,069 - DB_Conn_Error - ERROR - A database connection error occurred
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'finan_invest.market_symbolslx' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 69, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\market_symbols_crud.py", line 43, in insert_to_table
+    cursor.executemany(query, market_syms)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 499, in executemany
+    return self.execute(stmt)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'finan_invest.market_symbolslx' doesn't exist
+2024-06-16 13:23:10,368 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.090376
+
+2024-06-16 13:23:10,661 - DB_Conn_Error - ERROR - A database connection error occurred
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Data truncated for column 'LastPrice' at row 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 69, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\market_symbols_crud.py", line 43, in insert_to_table
+    cursor.executemany(query, market_syms)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 499, in executemany
+    return self.execute(stmt)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 1265 (01000): Data truncated for column 'LastPrice' at row 1
+2024-06-16 13:25:19,630 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.103122
+
+2024-06-16 13:42:01,849 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.080714
+
+2024-06-16 13:43:18,629 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.083210
+
+2024-06-16 13:43:35,776 - DB_Conn_Error - ERROR - A database connection error occurred
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Data truncated for column 'LastPrice' at row 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 69, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\market_symbols_crud.py", line 43, in insert_to_table
+    cursor.executemany(query, market_syms)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 499, in executemany
+    return self.execute(stmt)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 1265 (01000): Data truncated for column 'LastPrice' at row 1
+2024-06-16 13:45:00,423 - DB_Conn_Error - ERROR - A database connection error occurred
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'finan_invest.market_symbolslx' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 69, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\table_crud.py", line 58, in truncate_table
+    cursor.execute(truncate_query)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'finan_invest.market_symbolslx' doesn't exist
+2024-06-16 14:09:45,662 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.112629
+
+2024-06-16 14:09:45,934 - DB_Conn_Error - ERROR - A database connection error occurred
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Field 'idnyse_symbols' doesn't have a default value
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 69, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\market_symbols_crud.py", line 43, in insert_to_table
+    cursor.executemany(query, market_syms)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 499, in executemany
+    return self.execute(stmt)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 1364 (HY000): Field 'idnyse_symbols' doesn't have a default value
+2024-06-16 14:10:50,265 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.144518
+
+2024-06-16 14:11:14,346 - DB_Conn_Error - ERROR - A database connection error occurred
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Field 'idnyse_symbols' doesn't have a default value
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 69, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\market_symbols_crud.py", line 43, in insert_to_table
+    cursor.executemany(query, market_syms)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 499, in executemany
+    return self.execute(stmt)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 1364 (HY000): Field 'idnyse_symbols' doesn't have a default value
+2024-06-16 14:15:53,938 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.092014
+
+2024-06-16 14:15:54,233 - DB_Conn_Error - ERROR - A database connection error occurred
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Data too long for column 'stock_name' at row 9
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 69, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\market_symbols_crud.py", line 43, in insert_to_table
+    cursor.executemany(query, market_syms)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 499, in executemany
+    return self.execute(stmt)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DataError: 1406 (22001): Data too long for column 'stock_name' at row 9
+2024-06-16 14:17:21,287 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.095738
+
+2024-06-16 14:17:21,568 - DB_Conn_Error - ERROR - A database connection error occurred
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Data too long for column 'stock_name' at row 13
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 69, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\market_symbols_crud.py", line 43, in insert_to_table
+    cursor.executemany(query, market_syms)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 499, in executemany
+    return self.execute(stmt)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DataError: 1406 (22001): Data too long for column 'stock_name' at row 13
+2024-06-16 14:27:03,486 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.084294
+
+2024-06-16 14:27:04,141 - DB_Conn_Error - ERROR - A database connection error occurred
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Column 'symbol' cannot be null
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 69, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\market_symbols_crud.py", line 43, in insert_to_table
+    cursor.executemany(query, market_syms)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 499, in executemany
+    return self.execute(stmt)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1048 (23000): Column 'symbol' cannot be null
+2024-06-16 14:29:20,335 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.091421
+
+2024-06-16 14:34:00,385 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.084277
+
+2024-06-16 14:34:06,099 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.602566
+
+2024-06-16 14:35:08,382 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.086027
+
+2024-06-16 14:35:09,316 - MySQL Queries - INFO - INSERT operation on finan_invest.market_symbols completed successfully
+T: 0:00:00.932883
+
+2024-06-16 14:37:18,380 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.086656
+
+2024-06-16 14:45:13,909 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.128435
+
+2024-06-16 14:45:20,492 - DB_Conn_Error - ERROR - A database connection error occurred
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Column 'symbol' cannot be null
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 69, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\market_symbols_crud.py", line 43, in insert_to_table
+    cursor.executemany(query, market_syms)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 499, in executemany
+    return self.execute(stmt)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1048 (23000): Column 'symbol' cannot be null
+2024-06-16 14:45:48,547 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.082590
+
+2024-06-16 14:47:31,414 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.094564
+
+2024-06-16 15:02:56,971 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.086132
+
+2024-06-16 15:03:48,363 - MySQL Queries - INFO - INSERT operation on finan_invest.market_symbols completed successfully
+T: 0:00:00.640926
+
+2024-06-16 15:39:51,992 - DB_Conn_Error - ERROR - A database connection error occurred
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'finan_invest.market_symbolsxl' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 69, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\table_crud.py", line 58, in truncate_table
+    cursor.execute(truncate_query)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'finan_invest.market_symbolsxl' doesn't exist
+2024-06-16 15:45:18,249 - DB_Conn_Error - ERROR - A database connection error occurred
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'finan_invest.market_symbolsxl' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 69, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\market_symbols_crud.py", line 43, in insert_to_table
+    cursor.executemany(query, market_syms)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 499, in executemany
+    return self.execute(stmt)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'finan_invest.market_symbolsxl' doesn't exist
+2024-06-16 15:46:16,802 - DB_Conn_Error - ERROR - A database connection error occurred
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'finan_invest.market_symbolsxl' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 69, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\market_symbols_crud.py", line 43, in insert_to_table
+    cursor.executemany(query, market_syms)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 499, in executemany
+    return self.execute(stmt)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'finan_invest.market_symbolsxl' doesn't exist

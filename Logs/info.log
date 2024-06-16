@@ -1,0 +1,108 @@
+2024-06-16 13:01:33,192 - MySQL Queries - ERROR - Either the table name 'market_symbols' or the DB name 'finan_invest' are incorrect
+
+.
+2024-06-16 13:10:49,935 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.086343
+
+2024-06-16 13:20:12,696 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.085389
+
+2024-06-16 13:23:10,368 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.090376
+
+2024-06-16 13:25:19,630 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.103122
+
+2024-06-16 13:42:01,849 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.080714
+
+2024-06-16 13:43:18,629 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.083210
+
+2024-06-16 14:09:45,662 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.112629
+
+2024-06-16 14:10:50,265 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.144518
+
+2024-06-16 14:15:53,938 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.092014
+
+2024-06-16 14:17:21,287 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.095738
+
+2024-06-16 14:27:03,486 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.084294
+
+2024-06-16 14:29:20,335 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.091421
+
+2024-06-16 14:34:00,385 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.084277
+
+2024-06-16 14:34:06,099 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.602566
+
+2024-06-16 14:35:08,382 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.086027
+
+2024-06-16 14:35:09,316 - MySQL Queries - INFO - INSERT operation on finan_invest.market_symbols completed successfully
+T: 0:00:00.932883
+
+2024-06-16 14:37:18,380 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.086656
+
+2024-06-16 14:45:13,909 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.128435
+
+2024-06-16 14:45:48,547 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.082590
+
+2024-06-16 14:47:31,414 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.094564
+
+2024-06-16 15:02:56,971 - MySQL Queries - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.086132
+
+2024-06-16 15:03:48,363 - MySQL Queries - INFO - INSERT operation on finan_invest.market_symbols completed successfully
+T: 0:00:00.640926
+
+2024-06-16 15:23:23,357 - MySQL Queries_INFO - INFO - Table finan_invest.market_symbols has been truncated successfully.
+T: 0:00:00.080816
+
+2024-06-16 15:23:24,268 - MySQL Queries_INFO - INFO - INSERT operation on finan_invest.market_symbols completed successfully
+T: 0:00:00.910164
+
+2024-06-16 15:32:37,252 - MySQL Queries_INFO - INFO - Table finan_invest.market_symbols has been TRUNCATED successfully.
+T: 0:00:00.080762
+
+2024-06-16 15:32:37,627 - MySQL Queries_INFO - INFO - INSERT operation on finan_invest.market_symbols completed successfully
+T: 0:00:00.374736
+
+2024-06-16 15:32:37,629 - Main Program - INFO - Program completed successfully. T: 0:00:00.789629
+
+
+2024-06-16 15:40:23,779 - MySQL Queries_INFO - INFO - Table finan_invest.market_symbols has been TRUNCATED successfully.
+T: 0:00:00.074812
+
+2024-06-16 15:40:24,148 - MySQL Queries_INFO - INFO - INSERT operation on finan_invest.market_symbols completed successfully
+T: 0:00:00.368197
+
+2024-06-16 15:40:24,150 - Main Program - INFO - Program completed successfully. T: 0:00:00.775284
+
+
+2024-06-16 15:45:18,188 - MySQL Queries_INFO - INFO - Table finan_invest.market_symbols has been TRUNCATED successfully.
+T: 0:00:00.063129
+
+2024-06-16 15:46:16,737 - MySQL Queries_INFO - INFO - Table finan_invest.market_symbols has been TRUNCATED successfully.
+T: 0:00:00.091142
+
+2024-06-16 15:46:51,178 - MySQL Queries_INFO - INFO - Table finan_invest.market_symbols has been TRUNCATED successfully.
+T: 0:00:00.072992
+
+2024-06-16 15:46:51,546 - MySQL Queries_INFO - INFO - INSERT operation on finan_invest.market_symbols completed successfully
+T: 0:00:00.367057
+
+2024-06-16 15:46:51,549 - Main Program - INFO - Program completed successfully. T: 0:00:00.699522
+
+
