@@ -15,7 +15,7 @@ def memit(code_block: str):
     logger = log.logger_creator('INFO', logging_path=Paths.MEMORY_LOG.value)
 
     # Memory usage peak:
-    mem_before = memory_usage()[0]  # Start memory monitoring
+    mem_before = memory_usage(interval=0)[0]  # Start memory monitoring
     yield
-    mem_after = memory_usage(max_usage=True)  # Stop memory monitoring
-    logger.info(f"Peak memory usage on '{code_block}': {mem_after - mem_before:.4f} MiB")
+    mem_after = memory_usage(interval=0)[0]  # Stop memory monitoring
+    logger.info(f"Memory usage on '{code_block}': {mem_after - mem_before:.4f} MiB")
