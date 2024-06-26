@@ -443,3 +443,201 @@ Traceback (most recent call last):
   File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
     raise get_mysql_exception(
 mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'finan_invest.market_symbolsxl' doesn't exist
+2024-06-23 20:03:38,817 - DB_Conn_Error - ERROR - A database connection error occurred
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 69, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\market_symbols_crud.py", line 44, in insert_to_table
+    cursor.executemany(query, market_syms)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 496, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 450, in _batch_insert
+    raise InterfaceError(f"Failed executing the operation; {err}") from None
+mysql.connector.errors.InterfaceError: Failed executing the operation; Not all parameters were used in the SQL statement
+2024-06-23 20:38:39,404 - DB_Conn_Error - ERROR - A database connection error occurred
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Out of range value for column 'LastPrice' at row 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 69, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\market_symbols_crud.py", line 44, in insert_to_table
+    cursor.executemany(query, market_syms)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 499, in executemany
+    return self.execute(stmt)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DataError: 1264 (22003): Out of range value for column 'LastPrice' at row 1
+2024-06-23 20:43:24,213 - DB_Conn_Error - ERROR - A database connection error occurred
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Out of range value for column 'LastPrice' at row 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 69, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\market_symbols_crud.py", line 44, in insert_to_table
+    cursor.executemany(query, market_syms)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 499, in executemany
+    return self.execute(stmt)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DataError: 1264 (22003): Out of range value for column 'LastPrice' at row 1
+2024-06-23 20:45:04,235 - DB_Conn_Error - ERROR - A database connection error occurred
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Out of range value for column 'LastPrice' at row 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 69, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\market_symbols_crud.py", line 44, in insert_to_table
+    cursor.executemany(query, market_syms)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 499, in executemany
+    return self.execute(stmt)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DataError: 1264 (22003): Out of range value for column 'LastPrice' at row 1
+2024-06-25 21:53:52,621 - DB_Conn_Error - ERROR - Error occurred during truncation of finan_invest.market_symbols
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'finan_invest.market_symbolsf' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 70, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\table_crud.py", line 57, in truncate_table
+    cursor.execute(truncate_query)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'finan_invest.market_symbolsf' doesn't exist
+2024-06-25 21:55:41,517 - DB_Conn_Error - ERROR - Error occurred during truncation of finan_invest.market_symbols
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'finan_invest.market_symbolsf' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 70, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\table_crud.py", line 57, in truncate_table
+    cursor.execute(truncate_query)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'finan_invest.market_symbolsf' doesn't exist
+2024-06-25 21:57:57,179 - DB_Conn_Error - ERROR - Error occurred during truncation of finan_invest.market_symbols
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'finan_invest.market_symbolsf' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 70, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\table_crud.py", line 57, in truncate_table
+    cursor.execute(truncate_query)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'finan_invest.market_symbolsf' doesn't exist
+2024-06-25 22:05:42,777 - MySQL Queries_ERROR - ERROR - Error occurred during truncation of finan_invest.market_symbols
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'finan_invest.market_symbolsf' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 73, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\table_crud.py", line 58, in truncate_table
+    cursor.execute(truncate_query)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'finan_invest.market_symbolsf' doesn't exist
+
+2024-06-25 22:08:37,148 - MySQL Queries_ERROR - ERROR - Error occurred during truncation of finan_invest.market_symbols
+Traceback (most recent call last):
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 697, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'finan_invest.market_symbolsf' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\utils\db_conn.py", line 73, in open_db_cursor
+    yield cursor
+  File "C:\Users\dinun\OneDrive\Documents\CodingSource\Python\MarketScreener\src\CRUD\table_crud.py", line 58, in truncate_table
+    cursor.execute(truncate_query)
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 372, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 102, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dinun\AppData\Local\Programs\Python\Python312\Lib\site-packages\mysql\connector\connection_cext.py", line 705, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'finan_invest.market_symbolsf' doesn't exist

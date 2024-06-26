@@ -28,16 +28,20 @@ class Logger:
         self.trunc_success = "Table {0}.{1} has been TRUNCATED successfully.\n{2}\n"
         self.insert_success = "INSERT operation on {0}.{1} completed successfully\n{2}\n"
 
-    def logger_creator(self, logger_type='ERROR', logger_name=None):
+    def logger_creator(self, logger_type='ERROR', logger_name=None, logging_path=None):
         """
         Method creates a logger object
         :param logger_type: the type of the logger (e.g. error, info, etc.)
         :param logger_name: If defined (not None) use this parameter to change the logger name
         :type logger_name: str
+        :param logging_path: The location for the log file (if defined)
+        :type logging_path: str
         :return: the logger object
         :rtype: logging.Logger
         """
-        if logger_type == 'ERROR':
+        if logging_path:
+            logger_path = logging_path
+        elif logger_type == 'ERROR':
             logger_path = Paths.ERRORS_LOG.value
         elif logger_type == 'INFO':
             logger_path = Paths.INFO_LOG.value
@@ -54,7 +58,7 @@ class Logger:
         logger.setLevel(logger_type)
 
         # Configure handlers
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        formatter = logging.Formatter('\n%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         # For Console display
         logger_console_handler = logging.StreamHandler()
         logger_console_handler.setFormatter(formatter)

@@ -52,17 +52,11 @@ class Table_crud(ABC):
         truncate_query = f"TRUNCATE TABLE {self.db_name}.{self.table_name};"
         query_start = dt.now()
 
-        try:
-            # Execute the TRUNCATE query
-            with self.connection.open_db_cursor() as cursor:
-                cursor.execute(truncate_query)
-        except Error as e:
-            print(repr(e))
-            self.connection.db_conn.rollback()
-            self.logger_err.error(self.log.truncation_err.format(self.db_name, self.table_name), exc_info=True)
-            show_message()
-            sys.exit(1)
-        else:
+        # Execute the TRUNCATE query
+        with self.connection.open_db_cursor(self.logger_err,
+                                            self.log.truncation_err.format(self.db_name, self.table_name)) as cursor:
+            cursor.execute(truncate_query)
+
             # Commit the transaction
             self.connection.db_conn.commit()
             self.logger_inf.info(self.log.trunc_success.format(self.db_name, self.table_name,

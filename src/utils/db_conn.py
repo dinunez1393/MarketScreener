@@ -56,10 +56,14 @@ class DataBaseConn:
                   f"T: {dt.now() - conn_start}\n\n")
 
     @contextmanager
-    def open_db_cursor(self):
+    def open_db_cursor(self, logger, error_msg: str):
         """
         Method opens the DB cursor. It can be used as context manager. It will only work if db_conn is already
         established. This context manager was customized because MySQL Connector library does not provide one.
+        :param logger: The logger for the error message. It is different from this class logger because it is customized
+        for the object using this cursor.
+        :type logger: logging.Logger
+        :param error_msg: The error message to show if the SQL operation performed with the cursor fails
         :return: The DB cursor
         :rtype: mysql.connector.abstracts.MySQLCursorAbstract
         """
@@ -69,7 +73,8 @@ class DataBaseConn:
             yield cursor
         except Error as e:
             print(repr(e))
-            self.logger.error(self.log.db_conn_err, exc_info=True)
+            self.db_conn.rollback()
+            logger.error(error_msg, exc_info=True)
             show_message()
             sys.exit(1)
         finally:

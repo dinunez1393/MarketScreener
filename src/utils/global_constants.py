@@ -12,6 +12,7 @@ class Paths(Enum):
 
     INFO_LOG = rf"{PROJECT_FOLDER}{os.sep}Logs{os.sep}info.log"
     ERRORS_LOG = rf"{PROJECT_FOLDER}{os.sep}Logs{os.sep}errors.log"
+    MEMORY_LOG = rf"{PROJECT_FOLDER}{os.sep}Logs{os.sep}memory_usage.log"
     MAIN = rf"{PROJECT_FOLDER}{os.sep}src{os.sep}main.py"
     SRC_FOLDER = rf"{PROJECT_FOLDER}{os.sep}src{os.sep}"
     NASDAQ_CSV = rf"{PROJECT_FOLDER}{os.sep}Files{os.sep}nasdaq_stocks.csv"

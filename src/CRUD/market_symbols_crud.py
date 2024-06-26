@@ -32,22 +32,17 @@ class MarketSymbols_CRUD(Table_crud):
         insert_op_start = dt.now()
         query = f"""
             INSERT INTO {self.db_name}.{self.table_name} (
-                symbol, stock_name, LastPrice, LastVolume, IPO_year, industry, sector, exchange, Extraction_Timestamp
+                symbol, stock_name, LastPrice, LastVolume, IPO_year, country,
+                industry, sector, exchange, Extraction_Timestamp
             )
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
         """
-        try:
-            with self.connection.open_db_cursor() as cursor:
-                for market_syms in tqdm(self.market_symbols_data, total=len(self.market_symbols_data),
-                                        desc=f"INSERTing Market Symbols data to {self.db_name}.{self.table_name}"):
-                    cursor.executemany(query, market_syms)
-        except Error as e:
-            print(repr(e))
-            self.connection.db_conn.rollback()
-            self.logger_err.error(self.log.insert_err.format(self.db_name, self.table_name), exc_info=True)
-            show_message()
-            sys.exit(1)
-        else:
+        with self.connection.open_db_cursor(self.logger_err,
+                                            self.log.insert_err.format(self.db_name, self.table_name)) as cursor:
+            for market_syms in tqdm(self.market_symbols_data, total=len(self.market_symbols_data),
+                                    desc=f"INSERTing Market Symbols data to {self.db_name}.{self.table_name}"):
+                cursor.executemany(query, market_syms)
+
             # Commit the transaction
             self.connection.db_conn.commit()
             self.logger_inf.info(self.log.insert_success.format(self.db_name, self.table_name,

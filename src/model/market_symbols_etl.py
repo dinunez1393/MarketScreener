@@ -47,7 +47,8 @@ class MarketSymbols_ETL(ETL):
         """
         Method to transform the market symbols data (NYSE and NASDAQ) to get it ready for loading to DB
         """
-        columns_order = ['Symbol', 'Name', 'Last Sale', 'Volume', 'IPO Year', 'Industry', 'Sector', 'exchange']
+        columns_order = ['Symbol', 'Name', 'Last Sale', 'Volume', 'IPO Year', 'Country',
+                         'Industry', 'Sector', 'exchange']
         chunk_size = 5_000
 
         # Reindex stocks DF columns (it drops some unneeded columns)
@@ -55,6 +56,9 @@ class MarketSymbols_ETL(ETL):
 
         # Slice Stock name to maximum 65 chars
         self.stocks_df['Name'] = self.stocks_df['Name'].str.slice(0, 65)
+
+        # Round stock last price
+        self.stocks_df['Last Sale'] = self.stocks_df['Last Sale'].round(2)
 
         # Convert IPO year column from float to integer, then to string
         self.stocks_df['IPO Year'] = self.stocks_df['IPO Year'].astype('Int64')

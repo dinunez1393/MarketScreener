@@ -9,6 +9,7 @@ from src.model.market_symbols_etl import MarketSymbols_ETL
 from src.utils.logger import Logger
 from src.utils.alerts import AlertType
 from src.utils.util_functions import show_message
+from src.utils.util_functions2 import memit
 from src.utils.global_constants import *
 
 
